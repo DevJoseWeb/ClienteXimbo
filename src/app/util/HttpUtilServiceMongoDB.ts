@@ -8,7 +8,9 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 export class HttpUtilServiceMongoDB {
 
 
-	public API_URL: string = 'http://localhost:8080/pessoas/';
+	public API_URL: string = 'http://localhost:3000/agendas/';
+
+	
 	public API_URLid: string = 'http://localhost:8080/pessoas/pedidos';
 	public urllistarPessoa = 'http://localhost:8080/pessoas/';
 
@@ -72,12 +74,17 @@ export class HttpUtilServiceMongoDB {
 	urlListarp() {
 		return this.API_URLp;
 	}
-	 headers() {//application/json;charset=UTF-8
-	 	let headersParams = { 'Content-Type': 'application/json;charset=UTF-8' };
-	 	let headers = new Headers(headersParams);
-	 	let options = new RequestOptions({ headers: headers });
-	 	return options;
-	 }
+
+	 headers() {
+		let headersParams = { 'Content-Type': 'application/json;charset=UTF-8' };
+		if (localStorage['token']) {
+			headersParams['Authorization'] = localStorage['token'];
+		}
+		let headers = new Headers(headersParams);
+    	let options = new RequestOptions({ headers: headers });
+    	return options;
+	}
+
 	extrairDados(response: Response) {
 		let data = response.json();
 		return data || {};

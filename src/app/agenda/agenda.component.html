@@ -17,25 +17,24 @@
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Repetições</a>
                                 </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#listagem" role="tab">Listagem</a>
+                                </li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <div class="tab-pane active" id="home" role="tabpanel">
     
-    
                                     <form>
+                                                                               
                                         <div class="row">
-                                            <div class="col-md-5">
-                                                <label for="exampleSelect1">Player</label>
-                                                <select class="form-control" id="exampleSelect1">
-                                                    <option>PLAYER TESTE</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                </select>
+                                            
+                                             <div class="col-md-3">
+                                                        <div class="form-group form-black label-floating is-empty">
+                                                            <label class="control-label">Player</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
                                             </div>
-    
                                             <div class="col-md-3">
                                                 <div class="form-group form-black label-floating is-empty">
                                                     <label class="control-label">Início</label>
@@ -52,15 +51,11 @@
     
                                         <div class="row">
     
-                                            <div class="col-md-6">
-                                                <label for="exampleSelect1">Layout</label>
-                                                <select class="form-control" id="exampleSelect1">
-                                                    <option>LAYOUT TESTS</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                </select>
+                                                <div class="col-md-3">
+                                                        <div class="form-group form-black label-floating is-empty">
+                                                            <label class="control-label">Layout</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
                                             </div>
     
                                             <div class="col-md-6">
@@ -128,6 +123,42 @@
                                         </div>
                                     </form>
                                 </div>
+
+                                <!-- fim -->
+<!--
+                                <div class="tab-pane" id="listagem" role="tabpanel">
+    
+                                        <div class="col-md-12">
+                                                <div class="card card-plain">
+                                                    <div class="card-header" data-background-color="red">
+                                                        <h4 class="title">Listagem de Agendas</h4>
+                                                        <p class="category">Repetições</p>
+                                                    </div>
+                                                    <div class="card-content table-responsive">
+                                                        <table class="table table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Players</th>
+                                                                    <th>Início</th>
+                                                                    <th>Término</th>
+                                                          
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                    <tr *ngFor='let agenda of agenda'>
+                                                                            <td>{{ agenda.players }}</td>
+                                                                            <td>{{ agenda.inicio }}</td>
+                                                                            <td>{{ agenda.termino }}</td>
+                                                                    </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                -->
+                                    <!-- fim -->
+                                
                              </div>
                          </div>
                     </div>
