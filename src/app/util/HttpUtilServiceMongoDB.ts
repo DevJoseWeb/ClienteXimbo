@@ -9,23 +9,23 @@ export class HttpUtilServiceMongoDB {
 
 
 	public API_URL: string = 'http://localhost:3000/agendas/';
-
+	public urllistarPessoa = 'http://localhost:3000/pessoas/';
 	
-	public API_URLid: string = 'http://localhost:8080/pessoas/pedidos';
-	public urllistarPessoa = 'http://localhost:8080/pessoas/';
+	public API_URLid: string = 'http://localhost:3000/pessoas/pedidos';
+	
 
-	public API_URLp: string = 'http://localhost:8080/produtos/';
-	public API_URLpid: string = 'http://localhost:8080/produtos/';
+	public API_URLp: string = 'http://localhost:3000/produtos/';
+	public API_URLpid: string = 'http://localhost:3000/produtos/';
 
-	public urllistar = 'http://localhost:8080/users';
-	public urlpost = 'http://localhost:8080/users/cadastrar/';
-	public urlput: string = 'http://localhost:8080/users/editar/';
-	public urlbuscarid: string = 'http://localhost:8080/users';
+	public urllistar = 'http://localhost:3000/users';
+	public urlpost = 'http://localhost:3000/users/cadastrar/';
+	public urlput: string = 'http://localhost:3000/users/editar/';
+	public urlbuscarid: string = 'http://localhost:3000/users';
 
-	public urllistarPedidos = 'http://localhost:8080/pedidos/todosPedidos/';
+	public urllistarPedidos = 'http://localhost:3000/pedidos/todosPedidos/';
 
-  public urlVwPedidosNome = 'http://localhost:8080/vwpedidos/buscar/';
-  public urlView = 'http://localhost:8080/vwpedidos/';
+  public urlVwPedidosNome = 'http://localhost:3000/vwpedidos/buscar/';
+  public urlView = 'http://localhost:3000/vwpedidos/';
 
   urlViewPedNome () {
     return this.urlVwPedidosNome;
@@ -75,11 +75,28 @@ export class HttpUtilServiceMongoDB {
 		return this.API_URLp;
 	}
 
+	/*
+	->header("Access-Control-Expose-Headers", "Access-Control-*")
+	->header("Access-Control-Allow-Headers", "Access-Control-*, Origin, X-Requested-With, Content-Type, Accept")
+	->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, HEAD')
+	->header('Access-Control-Allow-Origin', '*')
+	->header('Allow', 'GET, POST, PUT, DELETE, OPTIONS, HEAD');*/
+
 	 headers() {
-		let headersParams = { 'Content-Type': 'application/json;charset=UTF-8' };
-		if (localStorage['token']) {
+		let headersParams = {
+	    
+	    'Content-Type': 'application/json;charset=UTF-8', 
+		'Access-Control-Allow-Headers':  'Access-Control-*, Origin, X-Requested-With, Content-Type, Accept',
+		'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS, HEAD',
+		'Access-Control-Allow-Origin' : '*',
+		'Allow' : 'GET, POST, PUT, DELETE, OPTIONS, HEAD'
+
+	};
+		
+
+	/*if (localStorage['token']) {
 			headersParams['Authorization'] = localStorage['token'];
-		}
+		}*/
 		let headers = new Headers(headersParams);
     	let options = new RequestOptions({ headers: headers });
     	return options;

@@ -51,6 +51,7 @@ export class AgendaComponent implements OnInit {
 }
   ngOnInit() {
     //this.pessoasService.getPessoas().subscribe(data => this.pessoas = data);
-    this.agendaService.getAgenda().subscribe(data => this.agenda = data);
+   // this.agendaService.getAgenda().subscribe(data => this.agenda = data);
+    console.log("ENTREI AQUI");
    }
 }

@@ -6,6 +6,9 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
 
+//import {AgendaService} from 'app/services/agenda.service';
+//import {Agenda} from 'app/model/agenda';
+
 declare const $: any;
 
 @Component({
@@ -14,15 +17,21 @@ declare const $: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
     private _router: Subscription;
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
+   // public agenda: Agenda[] = [];
 
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
 
-    constructor( public location: Location, private router: Router) {}
+    constructor( public location: Location, private router: Router
+        /* public agendaService: AgendaService*/) {}
 
     ngOnInit() {
+
+        //this.agendaService.getAgenda().subscribe(data => this.agenda = data);
+
         $.material.init();
         const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
         const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');

@@ -1,0 +1,17 @@
+<table class="highlight centered bordered responsive-table">
+    <thead>
+        <tr>
+          
+            <th data-field='nome'>Nome</th>
+            <th data-field='cpf'>CPF</th>
+        
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let pessoas of pessoas'>
+                <td>{{ pessoas.nome }}</td>
+                <td>{{ pessoas.cpf }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,34 @@
+<div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+               
+    
+                <div class="col-md-12">
+                    <div class="card card-plain">
+                        <div class="card-header" data-background-color="red">
+                            <h4 class="title">Table on Plain Background</h4>
+                            <p class="category">Here is a subtitle for this table</p>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        
+                                            <th data-field='nome'>Nome</th>
+                                            <th data-field='cpf'>CPF</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr *ngFor='let pessoas of pessoas; let i = index'>
+                                                <td>{{ pessoas.nome }}</td>
+                                                <td>{{ pessoas.cpf }}</td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

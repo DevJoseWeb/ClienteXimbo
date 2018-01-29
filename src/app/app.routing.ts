@@ -13,10 +13,12 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { UpgradeComponent } from './upgrade/upgrade.component';
 
 import { AgendaComponent } from './agenda/agenda.component';
+import { PessoasComponent } from './pessoas/pessoas.component';
 
 const routes: Routes =[
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'agenda',         component: AgendaComponent },
+    { path: 'pessoas',        component: PessoasComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     { path: 'typography',     component: TypographyComponent },
@@ -24,7 +26,7 @@ const routes: Routes =[
    // { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    { path: '',               redirectTo: 'notifications', pathMatch: 'full' },
+    { path: '',               redirectTo: 'dashbord', pathMatch: 'full' },
 ];
 
 @NgModule({

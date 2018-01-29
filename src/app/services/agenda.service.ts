@@ -21,7 +21,7 @@ export class AgendaService {
 
  getAgenda() {
    // return this.http.get(this.httpUtil.urlListar()).map(res => res.json())
-   return this.http.get('http://localhost:3000/agendas/').map(res => res.json())
+   return this.http.get(this.httpUtil.urlListar()).map(res => res.json())
     .catch(this.httpUtil.processarErros);
   }
 

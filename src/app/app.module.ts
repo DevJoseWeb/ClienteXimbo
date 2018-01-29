@@ -17,22 +17,30 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TableListComponent } from './table-list/table-list.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
-import { MapsComponent } from './maps/maps.component';
+//import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 
 import { AgendaComponent } from './agenda/agenda.component';
+//import { HttpUtilServiceMongoDB } from 'app/util/HttpUtilServiceMongoDB';
+
+//MÓDULOS DE CLIENTES
+import { PessoasComponent } from './pessoas/pessoas.component';
+import { pessoasRouting } from './pessoas/pessoas.routing';
+import { PessoasModule } from './pessoas/pessoas.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     AgendaComponent,
+    //PessoasComponent,
+   // HttpUtilServiceMongoDB,
     UserProfileComponent,
     TableListComponent,
     TypographyComponent,
     IconsComponent,
-    MapsComponent,
+   // MapsComponent,
     NotificationsComponent,
     UpgradeComponent
     ],
@@ -44,10 +52,12 @@ import { AgendaComponent } from './agenda/agenda.component';
     RouterModule,
     AppRoutingModule,
     JsonpModule,
-    ReactiveFormsModule
-    
-  ],
-  providers: [],
+    ReactiveFormsModule,
+    HttpModule,
+    PessoasModule,
+    pessoasRouting
+   ],
+  providers: [PessoasComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
