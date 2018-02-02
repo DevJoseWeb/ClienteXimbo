@@ -4,54 +4,90 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header" data-background-color="red">
-                            <h4 class="title">Agendar Eventos</h4>
-                            <p class="category">Cadastrar</p>
+                            <h4 class="title">Listagem de Clientes Pessoas Físicas</h4>
+                            <p class="category">Listagem</p>
+                           
                         </div>
                         <div class="card-content">
-    
-                   
-                            <div class="tab-content">
+                             
+                                <div class="tab-content">
                                 <div class="tab-pane active" id="home" role="tabpanel">
     
                                         <table class="table table-hover table-inverse">
                                             
                                                 <thead>
                                                     <tr>
-                                                        <th>Música</th>
                                                         <th>Nome</th>
                                                         <th>CPF</th>
-                                                     
-                                               
+                                                        <th>CPF</th>
+                                                        <th>CPF</th>
+                                                        <th>CPF</th>
+                                                        <th>CPF</th>
+                                                        
+                                                        <th>AÇÕES</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                    
-                                                    
                                                             <tr *ngFor='let pessoas of pessoas; let i = index'>
-                                                                    <audio controls>
-                                                                            <source src="http://localhost:3000/audio" type="audio/ogg">
-                                                                        </audio>
                                                                     <td>{{ pessoas.nome }}</td>
                                                                     <td>{{ pessoas.cpf }}</td>
                                                                     <td>{{ pessoas.cpf }}</td>
                                                                     <td>{{ pessoas.cpf }}</td>
-                                                                   
-                                                                        
-                                                                           
-                                                                            
-                    
-                                                                  
+                                                                    <td>{{ pessoas.cpf }}</td>
+                                                                    <td>{{ pessoas.cpf }}</td>
+                                                                
+                                                                    
+                                                                    <button type="button" class="btn btn-twitter" ><i class="glyphicon glyphicon-zoom-in"></i></button>
+                                                                    <button type="button" class="btn btn-success"><i class="material-icons">contact_mail</i></button>
+                                                                    <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+                                                                    
                                                             </tr>
-                    
-                                                    
-                                                </tbody>
+                                                           <!-- Button trigger modal -->
+                                                      
+                                                            <button type="button" class="btn btn-danger btn-circle btn-xl" data-toggle="modal" data-target="#exampleModal" (click)="showNotification('top','left')"><i class="glyphicon glyphicon-plus"></i></button>
+                                                 </tbody>
                                             </table>
-                                </div>
-                               
-                             </div>
+                                   </div>
+                              </div>
                          </div>
                     </div>
                 </div>
              </div>
         </div>
     </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Cadastro de Pessoas</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <form>
+                            <div class="form-group">
+                              <label for="formGroupExampleInput">Nome</label>
+                              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="nome">
+                            </div>
+                            <div class="form-group">
+                              <label for="formGroupExampleInput2">CPF</label>
+                              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="cpf">
+                            </div>
+                 </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar e Sair</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
